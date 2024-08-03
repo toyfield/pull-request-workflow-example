@@ -2,10 +2,13 @@ name: pull-request
 
 on:
   pull_request:
+    types: [opened, edited]
+    paths-ignore:
+      - ".github/workflows/**"
 
 jobs:
     echo:
         runs-on: ubuntu-latest
         steps:
             - name: Echo
-              run: echo "pull request based workflow"
+              run: echo "pull request ignore workflow"
