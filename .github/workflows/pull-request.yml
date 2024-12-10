@@ -1,11 +1,17 @@
 name: pull-request
 
 on:
-  pull_request:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
 
 jobs:
     echo:
         runs-on: ubuntu-latest
         steps:
+            - name: Debug action
+              uses: hmarr/debug-action@v3.0.0
             - name: Echo
               run: echo "pull request based workflow"
