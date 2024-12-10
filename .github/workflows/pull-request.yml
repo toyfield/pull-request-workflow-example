@@ -14,4 +14,4 @@ jobs:
             - name: Debug action
               uses: hmarr/debug-action@v3.0.0
             - name: Echo
-              run: echo "pull request based workflow"
+              run: echo "pull request based workflow is running"
