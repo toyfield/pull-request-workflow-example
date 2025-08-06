@@ -8,8 +8,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: gh release test
-        run: |
-          gh release list --repo microsoft/vscode | head -n 1
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: gh
+        uses: ./.github/actions/gh
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

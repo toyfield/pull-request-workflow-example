@@ -1,0 +1,17 @@
+name: gh
+description: GitHub CLI Action
+inputs:
+  token:
+    description: GitHub token to authenticate with the GitHub CLI
+    required: true
+    default: ${{ github.token }}
+
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Run GitHub CLI
+      run: gh release list --repo microsoft/vscode | head -n 1
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+      shell: bash
